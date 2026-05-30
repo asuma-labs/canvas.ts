@@ -2,14 +2,30 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.ts",
+      "src": "api/**/*.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "src/index.ts"
+      "src": "/api/welcome",
+      "dest": "/api/welcome.ts"
+    },
+    {
+      "src": "/api/profile",
+      "dest": "/api/profile.ts"
+    },
+    {
+      "src": "/api/rank",
+      "dest": "/api/rank.ts"
+    },
+    {
+      "src": "/api/quote",
+      "dest": "/api/quote.ts"
+    },
+    {
+      "src": "/output/(.*)",
+      "dest": "/api/output/[id].ts"
     }
   ]
 }
