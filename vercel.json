@@ -1,25 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "src/server.ts",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/api/welcome",
-      "dest": "/api/welcome.ts"
-    },
-    {
-      "src": "/api/profile",
-      "dest": "/api/profile.ts"
-    },
-    {
-      "src": "/api/rank",
-      "dest": "/api/rank.ts"
-    },
-    {
-      "src": "/api/quote",
-      "dest": "/api/quote.ts"
-    },
-    {
-      "src": "/output/(.*)",
-      "dest": "/api/output/[id].ts"
+      "src": "/(.*)",
+      "dest": "src/server.ts"
     }
   ]
 }
